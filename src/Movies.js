@@ -7,6 +7,7 @@ const Movies = ({movies}) => {
     const moviePosters = movies.map(movie => {
         return (
             <Movie 
+                poster={movie.poster_path}
                 title={movie.title}
                 averageRating={movie.average_rating.toFixed(1)}
                 releaseDate={movie.release_date}
