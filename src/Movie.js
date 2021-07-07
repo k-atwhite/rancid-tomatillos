@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './Movie.css'
 
-const Movie = ({ poster, backdrop, title, averageRating, releaseDate }) => {
+const Movie = ({ title, averageRating, releaseDate, id }) => {
     return (
-        <div>
-            {/* <img>poster</img>
-            <img>backdrop</img> */}
+        <div className='card'>
+{/* ADD POSTER AND BACKDROP */}
             <h3>{title}</h3>
             <p>{averageRating}</p>
-             <p>{releaseDate}</p>
+            <p>{releaseDate}</p>
         </div>
     )
 }

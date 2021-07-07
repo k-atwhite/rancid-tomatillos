@@ -8,8 +8,8 @@ const Movies = ({movies}) => {
         return (
             <Movie 
                 title={movie.title}
-                averageRating={movie.averageRating}
-                releaseDate={movie.releaseDate}
+                averageRating={movie.average_rating.toFixed(1)}
+                releaseDate={movie.release_date}
                 id={movie.id}
                 key={movie.id}
             />
