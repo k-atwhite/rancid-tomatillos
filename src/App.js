@@ -18,12 +18,13 @@ class App extends Component {
   
   render() { 
     return (
-      <body>
-        <nav>
-          
+      <body className='app'>
+        <nav className='navbar'>
+          <h1 className='title'>Rancid Tomatillos</h1>
         </nav>
         <main>
-
+          <div className='allMovies'>
+          </div>
         </main>
       </body>
     );
