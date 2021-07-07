@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Movies from './Movies';
+import movieData from './movieData';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: movieData.movies
+    }
+  }
+
+  // componentDidMount() {
+  //   fetch('URL')
+  //   .then(response => response.json())
+  //   .then(movies => this.setState({movies: movies}))
+  //   .catch(() => this.setState( {error: "something went wrong"}))
+  // }
+
+  // fillIdeas = (movieData) => {
+  //   this.setState({movies: movieData})
+  // }
+  
+  render() { 
+    return (
+      <div className='app'>
+        <nav className='navbar'>
+          <h1 className='title'>Rancid Tomatillos</h1>
+        </nav>
+        <main>
+            <Movies 
+              movies={this.state.movies}
+            />
+        </main>
+      </div>
+    );
+  }
 }
+ 
 
 export default App;
