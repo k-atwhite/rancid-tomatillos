@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Movies from './Movies';
-import movieData from './movieData';
+// import movieData from './movieData';
 import './App.css';
 
 class App extends Component {
@@ -21,12 +21,20 @@ class App extends Component {
   // fillIdeas = (movieData) => {
   //   this.setState({movies: movieData})
   // }
+
+showMovieDetails = () => {
+
+}
   
   render() { 
     return (
       <div className='app'>
         <nav className='navbar'>
           <h1 className='title'>Rancid Tomatillos</h1>
+          <button 
+            className="main-btn"
+            // onClick=""
+          >main</button>
         </nav>
         <main>
             <Movies 

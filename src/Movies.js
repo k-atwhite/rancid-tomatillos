@@ -1,12 +1,12 @@
 import React from 'react';
-import Movie from './Movie';
+import MovieCard from './MovieCard';
 import './Movies.css';
 
 const Movies = ({movies}) => {
 
     const moviePosters = movies.map(movie => {
         return (
-            <Movie 
+            <MovieCard 
                 poster={movie.poster_path}
                 title={movie.title}
                 backdrop={movie.backdrop_path}
