@@ -7,6 +7,7 @@ const Movies = ({movies}) => {
     const moviePosters = movies.map(movie => {
         return (
             <MovieCard 
+                movieObj={movie}
                 poster={movie.poster_path}
                 title={movie.title}
                 backdrop={movie.backdrop_path}
