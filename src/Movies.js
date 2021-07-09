@@ -1,18 +1,28 @@
 import React from 'react';
-import Movie from './Movie';
+import MovieCard from './MovieCard';
 import './Movies.css';
 
-const Movies = ({movies}) => {
+const Movies = ({movies, assignChosenMovie}) => {
 
     const moviePosters = movies.map(movie => {
         return (
-            <Movie 
+            <MovieCard 
+                movieObj={movie}
                 poster={movie.poster_path}
                 title={movie.title}
-                averageRating={movie.average_rating.toFixed(1)}
+                backdrop={movie.backdrop_path}
                 releaseDate={movie.release_date}
+                overview={movie.overview}
+                averageRating={movie.average_rating.toFixed(1)}
+                genre={movie.genres}
+                budget={movie.budget}
+                revenue={movie.revenue}
+                runtime={movie.runtime}
+                tagline={movie.tagline}
                 id={movie.id}
                 key={movie.id}
+                assignChosenMovie={assignChosenMovie}
+
             />
         )
     })
