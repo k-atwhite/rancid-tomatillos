@@ -16,6 +16,7 @@ class App extends Component {
   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
   .then(response => response.json())
   .then(movies => this.setState({movies: movies.movies}))
+  // I need to set up an error message
   .catch(() => this.setState( {error: "something went wrong"}))
   }
 
