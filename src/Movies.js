@@ -2,7 +2,7 @@ import React from 'react';
 import MovieCard from './MovieCard';
 import './Movies.css';
 
-const Movies = ({movies}) => {
+const Movies = ({movies, assignChosenMovie}) => {
 
     const moviePosters = movies.map(movie => {
         return (
@@ -21,6 +21,8 @@ const Movies = ({movies}) => {
                 tagline={movie.tagline}
                 id={movie.id}
                 key={movie.id}
+                assignChosenMovie={assignChosenMovie}
+
             />
         )
     })

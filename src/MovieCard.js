@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './MovieCard.css'
 
-const MovieCard = ({ poster, title, id, displayMovieDetails }) => {
+const MovieCard = ({ poster, title, assignChosenMovie, movieObj }) => {
     return (
         <div className='card'>
             <img src={poster}></img>
             <h4>{title}</h4>
-            <button onClick={ () => displayMovieDetails(id)}>Click for details</button>
+            <button onClick={() => assignChosenMovie(movieObj)}>🎥</button>
         </div>
     )
 }
