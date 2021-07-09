@@ -1,12 +1,7 @@
 import React from 'react';
-// import Movies from './Movies'
 
 
 const MovieDetails = ({movies, chosenMovie}) => {
-    console.log(chosenMovie, "title")
-    console.log( typeof chosenMovie.id, "chosenMovie ID")
-    console.log(movies, "all movies")
-    
     const displayedMovie = movies.find(movie => {
         return movie.id === chosenMovie.id
     })
@@ -17,7 +12,7 @@ const MovieDetails = ({movies, chosenMovie}) => {
             <p>{displayedMovie.backdrop_path}</p>
             <p>{displayedMovie.release_date}</p>
             <p>{displayedMovie.overview}</p>
-            <p>{displayedMovie.average_rating}⭐</p>
+            <p>{displayedMovie.average_rating.toFixed(2)}⭐</p>
             <p>{displayedMovie.genres}</p>
             {/* add commas */}
             <p>${displayedMovie.budget}</p>
