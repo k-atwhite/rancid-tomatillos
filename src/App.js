@@ -41,7 +41,7 @@ class App extends Component {
             className="main-btn"
           >main</button>
         </nav>
-        {!this.state.chosenMovie &&
+        {!this.state.chosenMovie.length &&
           <Movies 
             movies={this.state.movies}
             assignChosenMovie={this.assignChosenMovie}
@@ -50,6 +50,7 @@ class App extends Component {
         {this.state.chosenMovie.length && 
           <MovieDetails 
             movies={this.state.movies}
+            id={this.chosenMovie.id}
           />
         }
       </div>
