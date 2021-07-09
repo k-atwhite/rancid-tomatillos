@@ -4,8 +4,9 @@ import React from 'react';
 
 const MovieDetails = ({movies, chosenMovie}) => {
     console.log(chosenMovie, "title")
-    console.log(chosenMovie.id, "chosenMovie ID")
+    console.log( typeof chosenMovie.id, "chosenMovie ID")
     console.log(movies, "all movies")
+    
     const displayedMovie = movies.find(movie => {
         return movie.id === chosenMovie.id
     })

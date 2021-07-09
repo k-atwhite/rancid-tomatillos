@@ -20,7 +20,7 @@ class App extends Component {
   // }
 
   assignChosenMovie = (chosenMovie) => {
-    this.setState({chosenMovie: [chosenMovie]})
+    this.setState({chosenMovie: chosenMovie})
     console.log(chosenMovie.id, "chosen id")
   }
   
