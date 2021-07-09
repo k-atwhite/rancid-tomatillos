@@ -2,12 +2,13 @@ import Movies from './Movies'
 
 
 const MovieDetails = ({movies, id}) => {
-
+    console.log(id, "what is this")
+    console.log(movies, "all movies")
     const displayedMovie = movies.find(movie => {
         return movie.id === id
     })
     return (
-        <div className='MovieDetailsContainer'>
+        <div className='card'>
             <img src={displayedMovie.poster_path}></img>
             <h4>{displayedMovie.title}</h4>
             <p>{displayedMovie.backdrop_path}</p>

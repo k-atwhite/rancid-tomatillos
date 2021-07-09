@@ -6,7 +6,7 @@ const MovieCard = ({ poster, title, assignChosenMovie, movieObj }) => {
         <div className='card'>
             <img src={poster}></img>
             <h4>{title}</h4>
-            <button onClick={() => assignChosenMovie(movieObj)}>🎥</button>
+            <button onClick = { () => assignChosenMovie(movieObj)}>🎥</button>
         </div>
     )
 }
