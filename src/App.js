@@ -9,6 +9,7 @@ class App extends Component {
     this.state = {
       movies: [],
       chosenMovie: null,
+      showingMain: true,
     }
   }
 
@@ -22,6 +23,12 @@ class App extends Component {
 
   assignChosenMovie = (chosenMovie) => {
     this.setState({chosenMovie: chosenMovie})
+    this.setState({showingMain: false})
+  }
+
+  returnToMain = () => {
+    this.setState({showingMain: true})
+    this.setState({chosenMovie: null})
   }
   
   render() { 
@@ -31,6 +38,7 @@ class App extends Component {
           <h1 className='title'>Rancid Tomatillos</h1>
           <button 
             className="main-btn"
+            onClick = { () => this.returnToMain()}
           >main</button>
         </nav>
         {!this.state.chosenMovie &&
@@ -38,7 +46,7 @@ class App extends Component {
             movies={this.state.movies}
             assignChosenMovie={this.assignChosenMovie}
           />
-         } 
+         }
         {this.state.chosenMovie && 
           <MovieDetails 
             movies={this.state.movies}
