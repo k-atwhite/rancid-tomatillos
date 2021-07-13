@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Movies from './Movies';
-import MovieDetails from './MovieDetails';
+import Movies from '../Movies/Movies';
+import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       movies: [],
       chosenMovie: null,
-      showingMain: true,
+      error: ''
     }
   }
 
@@ -17,17 +17,14 @@ class App extends Component {
   fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
   .then(response => response.json())
   .then(movies => this.setState({movies: movies.movies}))
-  // I need to set up an error message
-  .catch(() => this.setState( {error: "something went wrong"}))
+  .catch(() => this.setState( {error: "Something went wrong on our end, please try again later"}))
   }
 
   assignChosenMovie = (chosenMovie) => {
     this.setState({chosenMovie: chosenMovie})
-    this.setState({showingMain: false})
   }
 
   returnToMain = () => {
-    this.setState({showingMain: true})
     this.setState({chosenMovie: null})
   }
   
@@ -41,6 +38,7 @@ class App extends Component {
             onClick = { () => this.returnToMain()}
           >main</button>
         </nav>
+        {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.chosenMovie &&
           <Movies 
             movies={this.state.movies}
