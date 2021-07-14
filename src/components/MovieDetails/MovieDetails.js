@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-
 
 const MovieDetails = ({movies, chosenMovie}) => {
     const displayedMovie = movies.find(movie => {
         return movie === chosenMovie
     })
-        {console.log(displayedMovie.poster_path)}
+        {console.log(displayedMovie)}
     return (
-        <div className='card'>
+        <section className='card'>
             <img src={displayedMovie.poster_path} alt={'movie poster'}></img>
             <h4>{displayedMovie.title}</h4>
             <p>{displayedMovie.backdrop_path}</p>
@@ -21,7 +19,7 @@ const MovieDetails = ({movies, chosenMovie}) => {
             <p>${displayedMovie.revenue}</p>
             <p>{displayedMovie.runtime} m</p>
             <p>{displayedMovie.tagline}</p>
-        </div>
+        </section>
     )
 }
 
