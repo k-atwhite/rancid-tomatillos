@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Movies from '../Movies/Movies';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
+import { Route, NavLink } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      chosenMovie: null,
       error: ''
     }
   }
@@ -23,34 +23,43 @@ class App extends Component {
   assignChosenMovie = (chosenMovie) => {
     this.setState({chosenMovie: chosenMovie})
   }
-
-  returnToMain = () => {
-    this.setState({chosenMovie: null})
-  }
   
   render() { 
     return (
       <div className='app'>
         <nav className='navbar'>
           <h1 className='title'>Rancid Tomatillos</h1>
-          <button 
-            className="main-btn"
-            onClick = { () => this.returnToMain()}
-          >main</button>
+          <NavLink to="/" className="main-btn" onClick = { () => this.returnToMain()}>
+            main 
+          </NavLink>
         </nav>
         {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.chosenMovie &&
-          <Movies 
-            movies={this.state.movies}
-            assignChosenMovie={this.assignChosenMovie}
-          />
-         }
-        {this.state.chosenMovie && 
+        <Route 
+          path='/'
+          render={() => {
+            return (
+              <Movies
+                movies={this.state.movies}
+                assignChosenMovie={this.assignChosenMovie} />
+            )
+          }}
+        />
+
+        <Route
+          exact path='/movies/:movieId'
+          render={( { match } ) => { 
+            const displayedMovie = match.params.id
+            return <MovieDetails chosenMovie={match} />
+          }} />
+
+        {/* {this.state.chosenMovie && 
           <MovieDetails 
             movies={this.state.movies}
             chosenMovie={this.state.chosenMovie}
           />
-        } 
+        }  */}
+
+
       </div>
     );
   }

@@ -1,12 +1,15 @@
 import React from 'react';
 import './MovieCard.css'
+import { Route, Link } from 'react-router-dom';
 
-const MovieCard = ({ poster, title, assignChosenMovie, movieObj }) => {
+
+const MovieCard = ({ poster, title, id }) => {
     return (
         <div className='card'>
-            <img src={poster} alt={'movie poster'}></img>
-            <h4>{title}</h4>
-            <button onClick = { () => assignChosenMovie(movieObj)}>Click for Details</button>
+            <Link to={`/movies/${id}`}>
+                <img src={poster} alt={'movie poster'}></img>
+                <h4>{title}</h4>
+            </Link>
         </div>
     )
 }
