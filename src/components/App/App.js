@@ -45,12 +45,7 @@ class App extends Component {
           }}
         />
 
-        <Route
-          exact path='/movies/:movieId'
-          render={( { match } ) => { 
-            const displayedMovie = match.params.id
-            return <MovieDetails chosenMovie={match} />
-          }} />
+        <Route path='/movies/:movieId' render={( autoInfo ) => { console.log(autoInfo.match)}} />
 
         {/* {this.state.chosenMovie && 
           <MovieDetails 
