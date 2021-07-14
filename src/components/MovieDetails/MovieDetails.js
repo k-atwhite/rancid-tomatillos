@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 
 const MovieDetails = ({movies, chosenMovie}) => {
     const displayedMovie = movies.find(movie => {
-        return movie.id === chosenMovie.id
+        return movie === chosenMovie
     })
+        {console.log(displayedMovie.poster_path)}
     return (
         <div className='card'>
             <img src={displayedMovie.poster_path} alt={'movie poster'}></img>

@@ -34,9 +34,7 @@ class App extends Component {
           </NavLink>
         </nav>
         {this.state.error && <h2>{this.state.error}</h2>}
-        <Route 
-          path='/'
-          render={() => {
+        <Route path='/' render={() => {
             return (
               <Movies
                 movies={this.state.movies}
@@ -44,17 +42,11 @@ class App extends Component {
             )
           }}
         />
-
-        <Route path='/movies/:movieId' render={( autoInfo ) => { console.log(autoInfo.match)}} />
-
-        {/* {this.state.chosenMovie && 
-          <MovieDetails 
-            movies={this.state.movies}
-            chosenMovie={this.state.chosenMovie}
-          />
-        }  */}
-
-
+        <Route path='/movies/:movieId' render={ ({match}) => { 
+          const displayedMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.movieId))
+          return <MovieDetails movies={this.state.movies}chosenMovie={displayedMovie} />
+         }} 
+         />
       </div>
     );
   }
