@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MovieDetails = ({movies, chosenMovie, id}) => {
+const MovieDetails = ({movies, chosenMovie}) => {
     const displayedMovie = movies.find(movie => {
         return movie === chosenMovie
     })

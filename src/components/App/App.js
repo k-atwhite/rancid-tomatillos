@@ -3,6 +3,7 @@ import Movies from '../Movies/Movies';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
 import { Route, NavLink } from 'react-router-dom';
+import { getAllMovies } from '../../apiCalls';
 
 class App extends Component {
   constructor() {
@@ -14,10 +15,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-  fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-  .then(response => response.json())
-  .then(movies => this.setState({movies: movies.movies}))
-  .catch(() => this.setState( {error: "Something went wrong on our end, please try again later"}))
+    getAllMovies()
+    .then(movies => this.setState({movies: movies.movies}))
+    .catch(() => this.setState( {error: "Something went wrong on our end, please try again later"}))
   }
   
   render() { 
@@ -39,8 +39,8 @@ class App extends Component {
         <Route 
           path='/movies/:movieId' 
           render={ ({match}) => { 
-            const displayedMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.movieId))
-            return <MovieDetails movies={this.state.movies} chosenMovie={displayedMovie} />
+            const chosenMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.movieId))
+            return <MovieDetails movies={this.state.movies} chosenMovie={chosenMovie} />
           }} 
         />
       </main>
