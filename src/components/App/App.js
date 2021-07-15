@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Movies from '../Movies/Movies';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
+import { Route, NavLink } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      chosenMovie: null,
       error: ''
     }
   }
@@ -19,42 +19,33 @@ class App extends Component {
   .then(movies => this.setState({movies: movies.movies}))
   .catch(() => this.setState( {error: "Something went wrong on our end, please try again later"}))
   }
-
-  assignChosenMovie = (chosenMovie) => {
-    this.setState({chosenMovie: chosenMovie})
-  }
-
-  returnToMain = () => {
-    this.setState({chosenMovie: null})
-  }
   
   render() { 
     return (
-      <div className='app'>
+      <main className='app'>
         <nav className='navbar'>
           <h1 className='title'>Rancid Tomatillos</h1>
-          <button 
-            className="main-btn"
-            onClick = { () => this.returnToMain()}
-          >main</button>
+          <NavLink to="/" className="main-btn">main</NavLink>
         </nav>
         {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.chosenMovie &&
-          <Movies 
-            movies={this.state.movies}
-            assignChosenMovie={this.assignChosenMovie}
-          />
-         }
-        {this.state.chosenMovie && 
-          <MovieDetails 
-            movies={this.state.movies}
-            chosenMovie={this.state.chosenMovie}
-          />
-        } 
-      </div>
+        <Route 
+          exact path='/' 
+          render={() => {
+            return (
+              <Movies movies={this.state.movies}/>
+            )
+          }}
+        />
+        <Route 
+          path='/movies/:movieId' 
+          render={ ({match}) => { 
+            const displayedMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.movieId))
+            return <MovieDetails movies={this.state.movies} chosenMovie={displayedMovie} />
+          }} 
+        />
+      </main>
     );
   }
 }
-
 
 export default App;
