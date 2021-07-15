@@ -2,9 +2,9 @@ import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
 
-const Movies = ({movies, assignChosenMovie}) => {
+const Movies = ({movies}) => {
 
-    const moviePosters = movies.map(movie => {
+    const allMovies = movies.map(movie => {
         return (
             <MovieCard 
                 movieObj={movie}
@@ -21,15 +21,13 @@ const Movies = ({movies, assignChosenMovie}) => {
                 tagline={movie.tagline}
                 id={movie.id}
                 key={movie.id}
-                assignChosenMovie={assignChosenMovie}
-
             />
         )
     })
 
     return (
         <div className='all-movies'>
-            {moviePosters}
+            {allMovies}
         </div>
     )
 }

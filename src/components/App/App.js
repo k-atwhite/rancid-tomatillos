@@ -27,9 +27,7 @@ class App extends Component {
           <h1 className='title'>Rancid Tomatillos</h1>
           <NavLink to="/" className="main-btn">main</NavLink>
         </nav>
-
         {this.state.error && <h2>{this.state.error}</h2>}
-
         <Route 
           exact path='/' 
           render={() => {
@@ -38,9 +36,8 @@ class App extends Component {
             )
           }}
         />
-
         <Route 
-          path='/:movieId' 
+          path='/movies/:movieId' 
           render={ ({match}) => { 
             const displayedMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.movieId))
             return <MovieDetails movies={this.state.movies} chosenMovie={displayedMovie} />
