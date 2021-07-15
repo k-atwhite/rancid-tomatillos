@@ -9,9 +9,39 @@ describe('Homepage', () => {
             ]
         })
     })
+
     .visit('http://localhost:3000')
+
+    it('should display a loading message when fetching movie data', () => {
+        
+    })
+
+
+    it('should display movie cards when the main page loads', () => {
+        
+    })
+    
+    it('should display an error message if the data doesnt load', () => {
+    
+    })
+
+
+    it('Should display home path when page loads', () => {
+        
+    })
+
+
+    it('Should be able to choose a movie poster on click, and display that movie details', () => {
+        
+    })
+
+    it('Should show a url with the specific movie id when showing the movie details', () => {
+        
+    })
+
 })
 
-it('should display movie cards when the page loads', () => {
-    
-})
+
+    // it('Should be able to search movies with a search bar', () => {
+        
+    // })
