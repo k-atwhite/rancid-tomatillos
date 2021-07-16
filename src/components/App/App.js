@@ -10,6 +10,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
+      chosenMovie: {},
       error: ''
     }
   }
@@ -41,7 +42,7 @@ class App extends Component {
           path='/movies/:movieId' 
           render={ ({match}) => { 
             const chosenMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.movieId))
-            return <MovieDetails movies={this.state.movies} chosenMovie={chosenMovie} />
+            return <MovieDetails movies={this.state.movies} chosenMovie={chosenMovie} id={parseInt(match.params.movieId)} />
           }} 
         />
       </main>
