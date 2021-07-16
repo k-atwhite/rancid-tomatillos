@@ -28,6 +28,7 @@ class App extends Component {
           <NavLink to="/" className="main-btn">main</NavLink>
         </nav>
         {this.state.error && <h2>{this.state.error}</h2>}
+        {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
         <Route 
           exact path='/' 
           render={() => {
