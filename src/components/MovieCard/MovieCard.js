@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({ poster, title, id }) => {
     return (
-        <Link to={`/movies/${id}`}>
-            <div className='card'>
+        <div className='card'>
+            <Link to={`/movies/${id}`}>
                 <img src={poster} alt={'movie poster'}></img>
                 <h4>{title}</h4>
-            </div>
-        </Link>
+            </Link>
+        </div>
 
     )
 }
