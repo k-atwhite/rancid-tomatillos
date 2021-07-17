@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Movies from '../Movies/Movies';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { getAllMovies } from '../../apiCalls';
 import SearchBar from '../SearchBar/SearchBar';
 
@@ -34,9 +34,10 @@ class App extends Component {
   render() { 
     return (
       <main className='app'>
-        {/* <Switch> */}
           <nav className='navbar'>
-            <h1 className='title'>Rancid Tomatillos</h1>
+            <Link to="/" className="header-button">
+              <h1 className='title'>Rancid Tomatillos</h1>
+            </Link>
             <SearchBar className='searchBar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
           </nav>
 
@@ -46,25 +47,18 @@ class App extends Component {
         <Route 
           exact path='/' 
           render={() => {
-            // console.log(this.state.movies, "movies")
-            // console.log(this.state.filteredMovies, "filtered movies")
-
             let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
             return (
               <Movies movies={displayedMovieData}/>
             )
           }}
         />
-{/* {this.state.filteredMovies && <Movies movies={this.state.filteredMovies} />} */}
-{/*  Make a div thats just for your searched movies while showing everything else? */}
-{/* But search is still visible after clicking a chosen movie */}
         <Route 
           path='/movies/:movieId' 
           render={ ({match}) => { 
             return <MovieDetails id={parseInt(match.params.movieId)} />
           }} 
         />
-        {/* </Switch> */}
       </main>
     );
   }
