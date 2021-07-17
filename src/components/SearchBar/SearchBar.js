@@ -15,18 +15,22 @@ class SearchBar extends Component {
         this.props.filterMovies(this.state.searchValue)
     }
 
+    clearSearch = event => {
+        this.setState( {searchValue: ''})
+    }
+
     render() { 
         return (
             <form>
                 <input
-                    type="text"
+                    type="search"
                     id="movie-search"
                     placeholder="search movies"
                     name="searchValue"
                     value={this.state.searchValue}
                     onChange={event => this.handleSearch(event)}
+                    onFocus={event => this.clearSearch(event)}
                 />
-            <button type="submit">search</button>
             </form>
         );
     }
