@@ -11,6 +11,7 @@ class App extends Component {
     super();
     this.state = {
       movies: [],
+      filteredMovies: [],
       error: ''
     }
   }
@@ -21,8 +22,9 @@ class App extends Component {
     .catch(() => this.setState( {error: "Something went wrong on our end, please try again later"}))
   }
 
-  filterMovies(searchCriteria) {
-    this.state.movies.filter(movie => movie.name.includes())
+  filterMovies = (searchValue) => {
+    let searchedMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
+    this.setState( {filteredMovies: searchedMovies})
   }
   
   render() { 
@@ -31,10 +33,16 @@ class App extends Component {
         <nav className='navbar'>
           <h1 className='title'>Rancid Tomatillos</h1>
           <NavLink to="/" className="main-btn">main</NavLink>
-          <SearchBar />
+          <SearchBar 
+            className='searchBar'
+            filterMovies={this.filterMovies}/>
         </nav>
+
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
+
+        {this.state.filteredMovies && <Movies movies={this.state.filteredMovies} />}
+
         <Route 
           exact path='/' 
           render={() => {
@@ -43,12 +51,14 @@ class App extends Component {
             )
           }}
         />
+
         <Route 
           path='/movies/:movieId' 
           render={ ({match}) => { 
             return <MovieDetails id={parseInt(match.params.movieId)} />
           }} 
         />
+
       </main>
     );
   }
