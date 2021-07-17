@@ -19,7 +19,6 @@ class SearchBar extends Component {
     clearSearchValue = event => {
         this.setState( {searchValue: ''})
         this.props.clearFilteredMovies()
-        console.log("clear filter ran");
     }
 
     render() { 
@@ -35,7 +34,7 @@ class SearchBar extends Component {
                     onFocus={event => this.clearSearchValue(event)}
                     
                 />
-                <i class="fa fa-times" aria-hidden="true" onClick={event => this.clearSearchValue(event)}></i>
+                <i className="fa fa-times" aria-hidden="true" onClick={event => this.clearSearchValue(event)}></i>
             </form>
         );
     }

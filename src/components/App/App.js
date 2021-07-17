@@ -30,15 +30,20 @@ class App extends Component {
   clearFilteredMovies = () => {
     this.setState( {filteredMovies: []} )
   }
+
+  chooseMovieData() {
+    let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
+    return displayedMovieData
+  }
   
   render() { 
     return (
       <main className='app'>
           <nav className='navbar'>
-            <Link to="/" className="header-button">
+            <Link to="/" className='header-button'>
               <h1 className='title'>Rancid Tomatillos</h1>
             </Link>
-            <SearchBar className='searchBar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
+            <SearchBar className='searchbar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
           </nav>
 
         {this.state.error && <h2>{this.state.error}</h2>}
@@ -47,9 +52,8 @@ class App extends Component {
         <Route 
           exact path='/' 
           render={() => {
-            let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
             return (
-              <Movies movies={displayedMovieData}/>
+              <Movies movies={this.chooseMovieData()}/>
             )
           }}
         />
