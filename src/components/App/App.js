@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import Movies from '../Movies/Movies';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { getAllMovies } from '../../apiCalls';
+import SearchBar from '../SearchBar/SearchBar';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      chosenMovie: {},
+      filteredMovies: [],
       error: ''
     }
   }
@@ -20,29 +21,42 @@ class App extends Component {
     .then(movies => this.setState({movies: movies.movies}))
     .catch(() => this.setState( {error: "Something went wrong on our end, please try again later"}))
   }
+
+  filterMovies = (searchValue) => {
+    let searchedMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
+    this.setState( {filteredMovies: searchedMovies})
+  }
+
+  clearFilteredMovies = () => {
+    this.setState( {filteredMovies: []} )
+  }
   
   render() { 
     return (
       <main className='app'>
-        <nav className='navbar'>
-          <h1 className='title'>Rancid Tomatillos</h1>
-          <NavLink to="/" className="main-btn">main</NavLink>
-        </nav>
+          <nav className='navbar'>
+            <Link to="/" className="header-button">
+              <h1 className='title'>Rancid Tomatillos</h1>
+            </Link>
+            <SearchBar className='searchBar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
+          </nav>
+
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
+
         <Route 
           exact path='/' 
           render={() => {
+            let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
             return (
-              <Movies movies={this.state.movies}/>
+              <Movies movies={displayedMovieData}/>
             )
           }}
         />
         <Route 
           path='/movies/:movieId' 
           render={ ({match}) => { 
-            const chosenMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.movieId))
-            return <MovieDetails movies={this.state.movies} chosenMovie={chosenMovie} id={parseInt(match.params.movieId)} />
+            return <MovieDetails id={parseInt(match.params.movieId)} />
           }} 
         />
       </main>
