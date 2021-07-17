@@ -30,35 +30,37 @@ class App extends Component {
   render() { 
     return (
       <main className='app'>
-        <nav className='navbar'>
-          <h1 className='title'>Rancid Tomatillos</h1>
-          <NavLink to="/" className="main-btn">main</NavLink>
-          <SearchBar 
-            className='searchBar'
-            filterMovies={this.filterMovies}/>
-        </nav>
+        {/* <Switch> */}
+          <nav className='navbar'>
+            <h1 className='title'>Rancid Tomatillos</h1>
+            <NavLink to="/" className="main-btn">main</NavLink>
+            <SearchBar 
+              className='searchBar'
+              filterMovies={this.filterMovies}/>
+          </nav>
 
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
 
-        {this.state.filteredMovies && <Movies movies={this.state.filteredMovies} />}
-
         <Route 
           exact path='/' 
           render={() => {
+            let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
             return (
-              <Movies movies={this.state.movies}/>
+              <Movies movies={displayedMovieData}/>
             )
           }}
         />
-
+{/* {this.state.filteredMovies && <Movies movies={this.state.filteredMovies} />} */}
+{/*  Make a div thats just for your searched movies while showing everything else? */}
+{/* But search is still visible after clicking a chosen movie */}
         <Route 
           path='/movies/:movieId' 
           render={ ({match}) => { 
             return <MovieDetails id={parseInt(match.params.movieId)} />
           }} 
         />
-
+        {/* </Switch> */}
       </main>
     );
   }
