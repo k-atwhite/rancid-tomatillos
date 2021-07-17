@@ -4,13 +4,13 @@ import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
 import { Route, NavLink } from 'react-router-dom';
 import { getAllMovies } from '../../apiCalls';
+import SearchBar from '../SearchBar/SearchBar';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      chosenMovie: {},
       error: ''
     }
   }
@@ -20,6 +20,10 @@ class App extends Component {
     .then(movies => this.setState({movies: movies.movies}))
     .catch(() => this.setState( {error: "Something went wrong on our end, please try again later"}))
   }
+
+  filterMovies(searchCriteria) {
+    this.state.movies.filter(movie => movie.name.includes())
+  }
   
   render() { 
     return (
@@ -27,6 +31,7 @@ class App extends Component {
         <nav className='navbar'>
           <h1 className='title'>Rancid Tomatillos</h1>
           <NavLink to="/" className="main-btn">main</NavLink>
+          <SearchBar />
         </nav>
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
@@ -41,8 +46,7 @@ class App extends Component {
         <Route 
           path='/movies/:movieId' 
           render={ ({match}) => { 
-            const chosenMovie = this.state.movies.find(movie => movie.id === parseInt(match.params.movieId))
-            return <MovieDetails movies={this.state.movies} chosenMovie={chosenMovie} id={parseInt(match.params.movieId)} />
+            return <MovieDetails id={parseInt(match.params.movieId)} />
           }} 
         />
       </main>
