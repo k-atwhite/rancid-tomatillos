@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+
 import './SearchBar.css';
 
 class SearchBar extends Component {
@@ -11,26 +12,30 @@ class SearchBar extends Component {
 
     handleSearch = event => {
         event.preventDefault();
-        this.setState( { [event.target.name]: event.target.value})
+        this.setState( {searchValue: event.target.value} )
         this.props.filterMovies(this.state.searchValue)
     }
 
-    clearSearch = event => {
+    clearSearchValue = event => {
         this.setState( {searchValue: ''})
+        this.props.clearFilteredMovies()
+        console.log("clear filter ran");
     }
 
     render() { 
         return (
             <form>
                 <input
-                    type="search"
+                    type="text"
                     id="movie-search"
                     placeholder="search movies"
                     name="searchValue"
                     value={this.state.searchValue}
-                    onChange={event => this.handleSearch(event)}
-                    onFocus={event => this.clearSearch(event)}
+                    onInput={event => this.handleSearch(event)}
+                    onFocus={event => this.clearSearchValue(event)}
+                    
                 />
+                <i class="fa fa-times" aria-hidden="true" onClick={event => this.clearSearchValue(event)}></i>
             </form>
         );
     }

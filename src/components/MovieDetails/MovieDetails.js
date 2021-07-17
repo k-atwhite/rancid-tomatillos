@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { getChosenMovie } from '../../apiCalls';
 
 class MovieDetails extends Component {
@@ -13,7 +14,7 @@ class MovieDetails extends Component {
     componentDidMount() {
         getChosenMovie(this.props.id)
         .then(movie => this.setState({displayedMovie: movie.movie}))
-        .catch(error => this.setState({error: 'Unable to load Movie'}))
+        .catch(error => this.setState({error: `Unable to load Movie-${error}`}))
     }
 
     render() {
@@ -38,6 +39,8 @@ class MovieDetails extends Component {
             <p className='revenue'>{this.state.displayedMovie.revenue}</p>
             <p className='runtime'>{this.state.displayedMovie.runtime}</p>
             <p className='tagline'>{this.state.displayedMovie.tagline}</p>
+            <NavLink to="/" className="main-btn">back to all movies</NavLink>
+
         </section>
         )
     }

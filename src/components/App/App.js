@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Movies from '../Movies/Movies';
 import MovieDetails from '../MovieDetails/MovieDetails';
 import './App.css';
-import { Route, NavLink } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { getAllMovies } from '../../apiCalls';
 import SearchBar from '../SearchBar/SearchBar';
 
@@ -26,6 +26,10 @@ class App extends Component {
     let searchedMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
     this.setState( {filteredMovies: searchedMovies})
   }
+
+  clearFilteredMovies = () => {
+    this.setState( {filteredMovies: []} )
+  }
   
   render() { 
     return (
@@ -33,10 +37,7 @@ class App extends Component {
         {/* <Switch> */}
           <nav className='navbar'>
             <h1 className='title'>Rancid Tomatillos</h1>
-            <NavLink to="/" className="main-btn">main</NavLink>
-            <SearchBar 
-              className='searchBar'
-              filterMovies={this.filterMovies}/>
+            <SearchBar className='searchBar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
           </nav>
 
         {this.state.error && <h2>{this.state.error}</h2>}
@@ -45,6 +46,9 @@ class App extends Component {
         <Route 
           exact path='/' 
           render={() => {
+            // console.log(this.state.movies, "movies")
+            // console.log(this.state.filteredMovies, "filtered movies")
+
             let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
             return (
               <Movies movies={displayedMovieData}/>
