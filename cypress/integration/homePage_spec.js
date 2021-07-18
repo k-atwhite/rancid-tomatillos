@@ -58,9 +58,10 @@ describe('Homepage', () => {
 
     })
 
-    // it('Should display an error message if there are no matches', () => {
-        
-    // })
+    it('Should display an error message if there are no matches', () => {
+          cy.get('form > input').type('AUUUGHHHHHGHGHGHG')
+          .get('h2').contains('seem to have any movies')
+    })
 
       it('Should be able to choose a movie poster on click, and navigate to the correct url', () => {
         cy.visit('http://localhost:3000')
