@@ -6,6 +6,7 @@ html {
 
 nav {
   overflow: hidden;
+  z-index: 10000;
   background-color: #202020;
   position: fixed;
   top: 0;
