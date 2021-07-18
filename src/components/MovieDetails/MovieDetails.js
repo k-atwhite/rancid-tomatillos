@@ -39,10 +39,6 @@ class MovieDetails extends Component {
         }
     }
 
-    changeDateFormat(date) {
-        let dateFormat = new Date(date)
-    }
-
     render() {
         if (this.state.error) {
             return <h2 className="error-message">{this.state.error}</h2>
@@ -59,7 +55,7 @@ class MovieDetails extends Component {
             <h4 className='movie-title-rating'>{this.state.displayedMovie.title} {parseInt(this.state.displayedMovie.average_rating).toFixed(0)}/10⭐</h4>
             <div className='movie-detial-info-container'>
                 <p className='tagline'>{this.state.displayedMovie.tagline}</p>
-                <p className='release-date'>Release Date: {this.state.displayedMovie.release_date}</p>
+                <p className='release-date'>Release Date: {this.changeDateFormat(this.state.displayedMovie.release_date)}</p>
                 <p className='genres'>Genre: {this.commaGenres(this.state.displayedMovie.genres)}</p>
                 <p className='overview'>{this.state.displayedMovie.overview}</p>
                 <p className='runtime'>{this.state.displayedMovie.runtime} minutes</p>
