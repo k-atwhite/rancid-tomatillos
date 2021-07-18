@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       movies: [],
       filteredMovies: [],
-      error: ''
+      error: '',
+      searchError: ''
     }
   }
 
@@ -25,10 +26,14 @@ class App extends Component {
   filterMovies = (searchValue) => {
     let searchedMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
     this.setState( {filteredMovies: searchedMovies})
+        if (!searchedMovies.length) {
+      this.setState( {searchError: "We don't seem to have any movies matching that name..."})
+    }
   }
 
   clearFilteredMovies = () => {
     this.setState( {filteredMovies: []} )
+    this.setState( {searchError: ''} )
   }
 
   chooseMovieData() {
@@ -48,6 +53,7 @@ class App extends Component {
 
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
+        {this.state.searchError && <h2 className='error-message'> ${this.state.searchError}`</h2>}
 
         <Route 
           exact path='/' 
