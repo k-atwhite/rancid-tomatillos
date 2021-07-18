@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       movies: [],
       filteredMovies: [],
-      error: ''
+      error: '',
+      searchError: ''
     }
   }
 
@@ -25,31 +26,40 @@ class App extends Component {
   filterMovies = (searchValue) => {
     let searchedMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
     this.setState( {filteredMovies: searchedMovies})
+        if (!searchedMovies.length) {
+      this.setState( {searchError: "We don't seem to have any movies matching that title..."})
+    }
   }
 
   clearFilteredMovies = () => {
     this.setState( {filteredMovies: []} )
+    this.setState( {searchError: ''} )
+  }
+
+  chooseMovieData() {
+    let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
+    return displayedMovieData
   }
   
   render() { 
     return (
       <main className='app'>
           <nav className='navbar'>
-            <Link to="/" className="header-button">
+            <Link to="/" className='header-button'>
               <h1 className='title'>Rancid Tomatillos</h1>
             </Link>
-            <SearchBar className='searchBar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
+            <SearchBar className='searchbar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
           </nav>
 
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
+        {this.state.searchError && <h2 className='error-message'> ${this.state.searchError}`</h2>}
 
         <Route 
           exact path='/' 
           render={() => {
-            let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
             return (
-              <Movies movies={displayedMovieData}/>
+              <Movies movies={this.chooseMovieData()}/>
             )
           }}
         />
