@@ -27,7 +27,7 @@ class App extends Component {
     let searchedMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
     this.setState( {filteredMovies: searchedMovies})
         if (!searchedMovies.length) {
-      this.setState( {searchError: "We don't seem to have any movies matching that name..."})
+      this.setState( {searchError: "We don't seem to have any movies matching that title..."})
     }
   }
 
