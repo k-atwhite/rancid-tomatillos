@@ -15,6 +15,21 @@
  border-radius: 5px;
 }
 
+.title-rating {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.title {
+  /* overflow-wrap: break-word; */
+  word-break:break-all
+}
 
 img {
   max-width:100%;
