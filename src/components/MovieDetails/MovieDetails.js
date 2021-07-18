@@ -49,8 +49,7 @@ class MovieDetails extends Component {
         }
         
         return(
-        <section className='card' >
-        {/* <section className='card' style={{backgroundImage: `url(${this.state.displayedMovie.backdrop_path})`}}> */}
+        <section className='card' style={{backgroundImage: `url(${this.state.displayedMovie.backdrop_path})`}}>
             <img src={this.state.displayedMovie.poster_path} alt={'movie poster'}></img>
             <h4 className='movie-title-rating'>{this.state.displayedMovie.title} {parseInt(this.state.displayedMovie.average_rating).toFixed(0)}/10⭐</h4>
             <div className='movie-detial-info-container'>

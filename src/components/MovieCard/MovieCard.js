@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({ poster, title, id }) => {
     return (
-        <div className='card'>
+        <div className='movie-card' style={{backgroundImage: `url(${poster})`}}>
             <Link to={`/movies/${id}`}>
-                <img src={poster} alt={'movie poster'}></img>
+                <img className="movie-poster" src={poster} alt={'movie poster'}></img>
                 <h4>{title}</h4>
             </Link>
         </div>
