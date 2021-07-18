@@ -10,11 +10,11 @@
 .movie-card:hover {
  transform: scale(1.2);
  opacity: 1;
+ border: 2px solid;
+ border-color: white;
+ border-radius: 5px;
 }
 
-/* .movie-card-title {
-  position: absolute;
-} */
 
 img {
   max-width:100%;
