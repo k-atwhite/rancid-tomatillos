@@ -9,6 +9,7 @@ html {
 
 .navbar {
   overflow: hidden;
+  background-color: #202020;
   position: fixed;
   top: 0;
   width: 100%;
@@ -24,7 +25,6 @@ html {
 }
 
 .title:hover {
-  /* color: yellow; */
   opacity:0.5;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
@@ -33,11 +33,11 @@ html {
 }
 
 .main-content {
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 
 .title {
-  font-family: 'Roboto', sans-serif;;
+  font-family: 'Notable', sans-serif;
 }
 
 
