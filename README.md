@@ -64,7 +64,9 @@ Open a window in your web browser of choice, and visit `localhost:3000` to view 
 
 ## Future Additions
 There are so many ways to grow this site. Several examples could be:
-1. 
-2. 
-3. 
+1. SASS
+2. Responsive Design
+3. Aria
+4. Better Date readability
+
 
