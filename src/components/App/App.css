@@ -1,9 +1,43 @@
+html {
+  background-image: linear-gradient(#202020	, #303030);
+  height: 100vh;
+  width: 100vw;
+}
+
 .app {
+}
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.title:hover {
+  /* color: yellow; */
+  opacity:0.5;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.1);
+
+}
+
+.main-content {
+  margin-top: 10vh;
 }
 
 .title {
-  
+  font-family: 'Roboto', sans-serif;;
 }
 
 

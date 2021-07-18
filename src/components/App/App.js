@@ -43,33 +43,34 @@ class App extends Component {
   
   render() { 
     return (
-      <main className='app'>
+      <div className='app'>
           <nav className='navbar'>
             <Link to="/" className='header-button'>
               <h1 className='title'>Rancid Tomatillos</h1>
             </Link>
             <SearchBar className='searchbar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
           </nav>
+          <main className="main-content">
+            {this.state.error && <h2>{this.state.error}</h2>}
+            {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
+            {this.state.searchError && <h2 className='error-message'> ${this.state.searchError}`</h2>}
 
-        {this.state.error && <h2>{this.state.error}</h2>}
-        {!this.state.movies && <h2 className='loading-message'>🍿 Movies Loading 🍿</h2>}
-        {this.state.searchError && <h2 className='error-message'> ${this.state.searchError}`</h2>}
-
-        <Route 
-          exact path='/' 
-          render={() => {
-            return (
-              <Movies movies={this.chooseMovieData()}/>
-            )
-          }}
-        />
-        <Route 
-          path='/movies/:movieId' 
-          render={ ({match}) => { 
-            return <MovieDetails id={parseInt(match.params.movieId)} />
-          }} 
-        />
-      </main>
+            <Route 
+              exact path='/' 
+              render={() => {
+                return (
+                  <Movies movies={this.chooseMovieData()}/>
+                )
+              }}
+            />
+            <Route 
+              path='/movies/:movieId' 
+              render={ ({match}) => { 
+                return <MovieDetails id={parseInt(match.params.movieId)} />
+              }} 
+            />
+          </main>
+      </div>
     );
   }
 }
