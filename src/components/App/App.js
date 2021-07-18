@@ -46,6 +46,7 @@ class App extends Component {
       <div className='app'>
           <nav className='navbar'>
             <Link to="/" className='header-button'>
+              {/* <img src="./tomatillo.png" alt="icon"/> */}
               <h1 className='title'>Rancid Tomatillos</h1>
             </Link>
             <SearchBar className='searchbar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>

@@ -23,19 +23,21 @@ class SearchBar extends Component {
 
     render() { 
         return (
-            <form>
-                <input
-                    type="text"
-                    id="movie-search"
-                    placeholder="search movies"
-                    name="searchValue"
-                    value={this.state.searchValue}
-                    onInput={event => this.handleSearch(event)}
-                    onFocus={event => this.clearSearchValue(event)}
-                    
-                />
-                <i className="fa fa-times" aria-hidden="true" onClick={event => this.clearSearchValue(event)}></i>
-            </form>
+            <div className="form-wrapper">
+                <form>
+                    <input
+                        className="input"
+                        type="text"
+                        id="movie-search"
+                        placeholder="search movies"
+                        name="searchValue"
+                        value={this.state.searchValue}
+                        onInput={event => this.handleSearch(event)}
+                        onFocus={event => this.clearSearchValue(event)}
+                    />
+                    <i className="fa fa-times" aria-hidden="true" onClick={event => this.clearSearchValue(event)}></i>
+                </form>
+            </div>
         );
     }
 }
