@@ -34,20 +34,18 @@ class App extends Component {
 
   clearFilteredMovies = () => {
     this.setState( {filteredMovies: [], searchError: ''} )
-    // this.setState( {searchError: ''} )
   }
 
   chooseMovieData() {
     let displayedMovieData = this.state.filteredMovies.length ? this.state.filteredMovies : this.state.movies
     return displayedMovieData
   }
-  
   render() { 
     return (
       <div className='app'>
           <nav className='navbar'>
             <Link to="/" className='header-button'>
-              {/* <img src="./tomatillo.png" alt="icon"/> */}
+              <img src="../App../components../src/public/tomatillo.png" alt="icon"/>
               <h1 className='title'>Rancid Tomatillos</h1>
             </Link>
             <SearchBar className='searchbar' filterMovies={this.filterMovies} clearFilteredMovies={this.clearFilteredMovies}/>
