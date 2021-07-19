@@ -70,9 +70,7 @@ class MovieDetails extends Component {
 
     <div className=".movie-details-card">
         <div className="container">
-            {/* <a href="#"><img src={this.state.displayedMovie.poster_path} alt="moviePoster" className="cover" /></a> */}
-            {/* <a href="background-img" style={{backgroundImage: `url(${this.state.displayedMovie.backdrop_path})`}}></a>  */}
-            {/* <img src={this.state.displayedMovie.backdrop_path} alt={'background-img'}></img> */}
+            <a href="#"><img src={this.state.displayedMovie.poster_path} alt="moviePoster" className="cover" /></a>
                 <div className="hero" style={{backgroundImage: `url(${this.state.displayedMovie.backdrop_path})`}}> 
                     <div className="details">
                         <div className="title1">{this.state.displayedMovie.title}</div>

@@ -43,25 +43,13 @@ a:hover {
   background-size: 100%;
 }
 
-/* .hero:before {
-  content:'';
-  width:50%; height:50%;
-  position:absolute;
-  /* overflow: hidden; 
-  top:0; left:0;
-  /* background:white; 
-  /* background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_bg.jpg"); 
-   z-index:-1;
-  transform: skewY(-2.2deg);
-  transform-origin:0 0;
-  -webkit-backface-visibility: hidden;  
-} */
-
 .cover {
   position: absolute;
   top: 160px;
   left: 40px;
   z-index: 2;
+ max-width: 40%;
+ max-height: 40%;
 }
 
 .details {
