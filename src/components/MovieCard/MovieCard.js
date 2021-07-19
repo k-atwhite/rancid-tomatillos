@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({ poster, title, id, averageRating }) => {
     return (
-        <section>
-        {/* {className='movie-card' alt={`${title}`} style={{backgroundImage: `url(${poster})`}}} */}
+        <section className="entire-card">
             <Link to={`/movies/${id}`}>
                 <img className="movie-card" src={poster} alt={'movie poster'}></img>
             </Link>

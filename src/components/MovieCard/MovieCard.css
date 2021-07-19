@@ -1,10 +1,18 @@
+.entire-card {
+  width: 12%;
+  height: 20%;
+  text-align: ce;
+}
+
 .movie-card {
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
   height: 31vh;
   width: 11vw;
   opacity:0.8;
-  margin: 1%
+  margin: 1%;
+  max-width:100%;
+  max-height:100%;
 }
 
 .movie-card:hover {
@@ -24,13 +32,4 @@
   justify-content: center;
   align-items: center;
   align-self: center;
-}
-
-.title {
-
-}
-
-.movie-card {
-  max-width:100%;
-  max-height:100%;
 }

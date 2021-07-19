@@ -24,16 +24,17 @@ class App extends Component {
   }
 
   filterMovies = (searchValue) => {
-    let searchedMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue))
-    this.setState( {filteredMovies: searchedMovies})
-        if (!searchedMovies.length) {
-      this.setState( {searchError: "We don't seem to have any movies matching that title..."})
-    }
+    let searchedMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(searchValue.toLowerCase()))
+    this.setState( {filteredMovies: searchedMovies}, () => {
+      if (!searchedMovies.length) {
+        this.setState( {searchError: "We don't seem to have any movies matching that title..."})
+      }
+    })
   }
 
   clearFilteredMovies = () => {
-    this.setState( {filteredMovies: []} )
-    this.setState( {searchError: ''} )
+    this.setState( {filteredMovies: [], searchError: ''} )
+    // this.setState( {searchError: ''} )
   }
 
   chooseMovieData() {
