@@ -24,9 +24,9 @@ describe('Homepage', () => {
     })
 
     it('Should render movie cards upon loading', () => {
-        cy.get('.card').contains('Money Plane')
-        cy.get('.card').contains('Mulan')
-        cy.get('.card').contains('Rogue')
+        cy.get('.entire-card').contains('Money Plane')
+        cy.get('.entire-card').contains('Mulan')
+        cy.get('.entire-card').contains('Rogue')
     })
 
     it('should display an error message if the data doesnt load', () => {
@@ -40,14 +40,14 @@ describe('Homepage', () => {
     })
 
     it('Should show the input as the user types in the searchbar', () => {
-        cy.get('form > input').type('Money')
-        .should('have.value', "Money")
+        cy.get('form > input').type('money')
+        .should('have.value', "money")
 
     })
 
     it('Should display moves that match search', () => {
         cy.get('form > input').type('Mulan')
-        .get('.card').contains('Mulan')
+        .get('.entire-card').contains('Mulan')
 
     })
 
@@ -65,7 +65,7 @@ describe('Homepage', () => {
 
       it('Should be able to choose a movie poster on click, and navigate to the correct url', () => {
         cy.visit('http://localhost:3000')
-        cy.get('.card:first').click()
+        cy.get('.entire-card:first').click()
         .url().should('include', 694919)
     })
 

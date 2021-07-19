@@ -1,28 +1,9 @@
-- [ ] README concisely communicates:
-- [ ] the team’s individual and joint learning goals
-- [ ] the evolution of the project
-- [ ] team member reflections 
-- [ ] while using good formatting to enhance readability
-
-- [ ] README links to all user GitHub profiles and any applicable repos/deployed sites
-
-- [ ] Team uses a rebase workflow
-
-- [ ]When the project is run locally, the terminal shows no errors or warnings
-
-- [x] Git commits are atomic, with concise and precise descriptions of the change made
-
-- [x] PRs have full, consistent descriptions
-
-- [x]Evolution of the project (decisions made, etc) are fully and clearly documented in the git history and PRs
-
-
-
 <h1 align="center"> 🎥 Rancid Tomatillos 🎥 </h1>
 
 <p align="center"><img src=https://media.giphy.com/media/o1z5JcQ1ahHI0gr9gs/giphy.gif ></p>
 
 ## Table of Contents
+
 1. [Contributors]()
 2. [Project Goals]()
 3. [Project Overview](h)
@@ -31,42 +12,44 @@
 6. [Future Additions]()
 
 ## Contributors
+
 - [Kat White](https://github.com/k-atwhite)
 
-## Project Goals
+## Learning Goals
+
 - Gain competency with React fundamentals
 - Learn how to test React components & asynchronous JS
 - Create a multi-page UX using Router
 - Focus project development using user stories and acceptance critera
 - Practice testing with Cypress
 
-
 ## Project Overview & User Stories
 
+Rotten tomatillos offers movie buffs a simple, streamlined way to learn about movies they already love or are curious about. The home page automatically displays the theatrical poster for every movie in our database, as well as the average rating, and the movie's title. Users can scroll through our selection, or simply search for a desired title. Upon finding the film, simply click the movie poster and the user will be taken to a page displaying specifics about that movie. Look above and find that each movie has a specific url path! Click the Rancid Tomatillos logo and head back to the main page to search for another movie.
 
 ## App Setup
+
 In the new Terminal window, run the following commands:  
 `git clone xxxxxxxxxx`  
-`cd overlook`  
+`cd rancid-tomatillos`  
 `npm install`  
 `npm start`  
 Open a window in your web browser of choice, and visit `localhost:3000` to view the app!
 
-
 ## Technologies Used
-* Cypress
-* HTML
-* CSS
-* JavaScript
-* Create React App
-* Router
 
+- Cypress
+- HTML
+- CSS
+- JavaScript
+- Create React App
+- Router
 
-## Future Additions
+## Future Additions & Reflections
+
 There are so many ways to grow this site. Several examples could be:
-1. SASS
-2. Responsive Design
-3. Aria
-4. Better Date readability
 
-
+1. More robust search: being able to search for actors, genres, and even release years would create a better user experience.
+2. Favorites: This site is begging to have an option to save a user's favorite movie, and to remove movies from the favorites folder too
+3. Ratings: This is is also in need of a complete rating system. A user can see the average rating presently, but cannot add their own voice to the mix.
+4. Trailers: How can you know if you really want to watch a movie you haven't seen without watching the trailer? The select movie details should be able to show the theatrical trailer for each movie.

@@ -16,12 +16,12 @@ describe('Movie Details', () => {
 
     it('Should display the movies details', () => {
         cy.url().should('include', 694919)
-        .get('.movie-title').contains('Money Plane')
+        .get('.details').contains('Money Plane')
         .get('.release-date').contains('2020-09-29')
     })
     
     it('Should return to home page when main button is clicked', () => {
-        cy.get('.main-btn').click()
+        cy.get('.title').click()
         .url().should('eq', 'http://localhost:3000/')
     })
 

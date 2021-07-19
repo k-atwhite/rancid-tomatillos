@@ -1,47 +1,39 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-
-}
-
-a {
-  text-decoration: none;
-  color: #5C7FB8
 }
 
 .movie-details-card {
-  font: 14px/22px "Lato", Arial, sans-serif;
-  color: #A9A8A3;
-  padding: 40px 0;
+  color: #a9a8a3;
 }
 
 h4 {
-    color: white;
+  color: white;
 }
 
 .runtime {
-    color: white;
+  color: white;
 }
 
 .container {
+  font-family: "Roboto", sans-serif;
   margin: 0 auto;
+  margin-top: 15%;
   width: 80%;
-  height: 100%;
-  background: #F0F0ED;
-  border-radius: 5px;
+  background: #f0f0ed;
   position: relative;
 }
 
 .hero {
-  height: 342px;  
-  margin:0;
+  height: 10%;
+  margin: 0;
   position: relative;
   overflow: hidden;
-  z-index:1;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  z-index: 1;
   object-fit: cover;
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .cover {
@@ -49,48 +41,39 @@ h4 {
   top: 160px;
   left: 40px;
   z-index: 2;
-  max-width: 40%;
-  max-height: 40%;
+  width: 24%;
+  height: 36%;
 }
 
 .details {
-  padding: 190px 0 0 280px;
+  padding-left: 37%;
+  padding-top: 20%;
 }
-  
-  
+
 .title1 {
   color: white;
-  font-size: 44px;
+  font-size: 200%;
   margin-bottom: 13px;
   position: relative;
 }
-    
-span {
-  position: absolute;
-  top: 3px;
-  margin-left: 12px;
-  background: #C4AF3D;
-  border-radius: 5px;
-  color: #544C21;
-  font-size: 14px;
-  padding: 0px 4px;
+
+.title2 {
+  color: white;
+  font-size: 23px;
+  font-weight: 300;
+  margin-bottom: 15px;
 }
 
-.title2 {    
-color: white;
-font-size: 23px;    
-font-weight: 300;
-margin-bottom: 15px;
-}
-
-
-.description { 
-  bottom: 0px;
-  height:100vh;
+.description {
+  height: 100vh;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 27px;
   color: black;
+}
 
+p {
+  max-width: 90%;
+  font: 80%;
 }
 
 .column1 {
@@ -104,22 +87,19 @@ margin-bottom: 15px;
 }
 
 .tag {
-  background: white;
+  background: #a9a8a3;
   border-radius: 10px;
   padding: 3px 8px;
   font-size: 14px;
   margin-right: 4px;
-  margin-top: 60%;
+  margin-top: 40%;
   line-height: 35px;
   position: relative;
 }
 
 .column2 {
-  /* padding-left: 41px; */
   padding-top: 1%;
   padding-left: 2%;
   width: 480px;
   float: right;
 }
-
-
