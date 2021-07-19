@@ -1,7 +1,7 @@
 .entire-card {
   width: 12%;
   height: 20%;
-  text-align: ce;
+  text-align: center;
 }
 
 .movie-card {
@@ -13,14 +13,14 @@
   margin: 1%;
   max-width:100%;
   max-height:100%;
-}
+  }
 
 .movie-card:hover {
- transform: scale(1.2);
- opacity: 1;
- border: 2px solid;
- border-color: white;
- border-radius: 5px;
+  transform: scale(1.2);
+  opacity: 1;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 5px;
 }
 
 .title-rating {

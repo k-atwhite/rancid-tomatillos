@@ -90,6 +90,7 @@ margin-bottom: 15px;
   font-size: 16px;
   line-height: 26px;
   color: black;
+
 }
 
 .column1 {
@@ -110,15 +111,15 @@ margin-bottom: 15px;
   margin-right: 4px;
   margin-top: 60%;
   line-height: 35px;
-  cursor: pointer;
+  position: relative;
 }
 
 .column2 {
-  padding-left: 41px;
-  padding-top: 30px;
-  margin-left: 20px;
+  /* padding-left: 41px; */
+  padding-top: 1%;
+  padding-left: 2%;
   width: 480px;
-  float: left;
+  float: right;
 }
 
 
