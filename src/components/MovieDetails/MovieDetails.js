@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import { getChosenMovie } from '../../apiCalls';
 import './MovieDetails.css';
 
@@ -70,12 +69,12 @@ class MovieDetails extends Component {
 
     <div className=".movie-details-card">
         <div className="container">
-            <a href="#"><img src={this.state.displayedMovie.poster_path} alt="moviePoster" className="cover" /></a>
+            <img src={this.state.displayedMovie.poster_path} alt="moviePoster" className="cover" />
                 <div className="hero" style={{backgroundImage: `url(${this.state.displayedMovie.backdrop_path})`}}> 
                     <div className="details">
                         <div className="title1">{this.state.displayedMovie.title}</div>
                         <div className="title2">{this.state.displayedMovie.tagline}</div>
-                        <h4 className='movie-title-rating'>{this.state.displayedMovie.title} {parseInt(this.state.displayedMovie.average_rating).toFixed(0)}/10⭐</h4>    
+                        <h4 className='movie-rating'> {parseInt(this.state.displayedMovie.average_rating).toFixed(0)}/10⭐</h4>    
                         <p className='runtime'>{this.state.displayedMovie.runtime} minutes</p>
                     </div>
                 </div>

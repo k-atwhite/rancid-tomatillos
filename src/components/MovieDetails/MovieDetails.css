@@ -1,19 +1,12 @@
-/* @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
-
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css); */
-
 *, *:before, *:after {
   box-sizing: border-box;
-}
+  font-family: 'Roboto', sans-serif;
 
+}
 
 a {
   text-decoration: none;
   color: #5C7FB8
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .movie-details-card {
@@ -22,13 +15,22 @@ a:hover {
   padding: 40px 0;
 }
 
+h4 {
+    color: white;
+}
+
+.runtime {
+    color: white;
+}
+
 .container {
   margin: 0 auto;
-  width: 780px;
-  height: 640px;
+  width: 80%;
+  height: 100%;
   background: #F0F0ED;
   border-radius: 5px;
   position: relative;
+
 }
 
 .hero {
@@ -48,12 +50,12 @@ a:hover {
   top: 160px;
   left: 40px;
   z-index: 2;
- max-width: 40%;
- max-height: 40%;
+  max-width: 40%;
+  max-height: 40%;
 }
 
 .details {
-padding: 190px 0 0 280px;
+    padding: 190px 0 0 280px;
 }
   
   
@@ -77,24 +79,12 @@ span {
 }
 
 .title2 {    
-color: #C7C1BA;
+color: white;
 font-size: 23px;    
 font-weight: 300;
 margin-bottom: 15px;
 }
-  
-  
-.likes {
-margin-left: 24px;
-}
-  
-  
-.likes:before {
-content: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/icon_like.png");
-position: relative;
-top: 2px;
-padding-right: 7px;
-}
+
 
 .description {
   
@@ -102,7 +92,8 @@ padding-right: 7px;
   height: 200px;
   font-size: 16px;
   line-height: 26px;
-  color: #B1B0AC;
+  color: black;
+
   
 }
 
@@ -112,6 +103,8 @@ padding-right: 7px;
   width: 220px;
   float: left;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .tag {
@@ -120,12 +113,9 @@ padding-right: 7px;
   padding: 3px 8px;
   font-size: 14px;
   margin-right: 4px;
+  margin-top: 60%;
   line-height: 35px;
   cursor: pointer;
-}
-
-.tag:hover {
-  background: #ddd;
 }
 
 .column2 {
@@ -136,49 +126,4 @@ padding-right: 7px;
   float: left;
 }
 
-fieldset, label { margin: 0; padding: 0; }
-
-
-a[data-tooltip]::before {
-  /*
-   * using data-tooltip instead of title so we 
-   * don't have the real tooltip overlapping
-   */
-  content: attr(data-tooltip);
-  background: #000;
-  color: #fff;
-  font-size: 13px;
-  padding: 5px;
-  border-radius: 5px;
-  /* we don't want the text to wrap */
-  white-space: nowrap;
-  text-decoration: none;
-}
-a[data-tooltip]::after {
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  content: '';
-}
-
-a[data-tooltip]:hover::before,
-a[data-tooltip]:hover::after {
-  display: block;
-}
-
-/** positioning **/
-
-/* top tooltip */
-a[data-tooltip][data-placement="top"]::before {
-  bottom: 100%;
-  left: 0;
-  margin-bottom: 40px;
-}
-a[data-tooltip][data-placement="top"]::after {
-  border-top-color: #000;
-  border-bottom: none;
-  bottom: 50px;
-  left: 20px;
-  margin-bottom: 4px;
-}
 

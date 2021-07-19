@@ -7,7 +7,7 @@ const MovieCard = ({ poster, title, id, averageRating }) => {
         <section>
         {/* {className='movie-card' alt={`${title}`} style={{backgroundImage: `url(${poster})`}}} */}
             <Link to={`/movies/${id}`}>
-                <img className="movie-card" alt={`${title}`} src={poster} alt={'movie poster'}></img>
+                <img className="movie-card" src={poster} alt={'movie poster'}></img>
             </Link>
             <div className="title-rating">
                 <p className="title">{title}</p>
