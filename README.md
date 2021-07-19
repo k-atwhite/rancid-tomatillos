@@ -1,15 +1,15 @@
 <h1 align="center"> 🎥 Rancid Tomatillos 🎥 </h1>
 
-<p align="center"><img src=https://media.giphy.com/media/o1z5JcQ1ahHI0gr9gs/giphy.gif ></p>
+<p align="center"><img src=https://media.giphy.com/media/wXLXChPKbYZv7OOZy5/giphy.gif ></p>
 
 ## Table of Contents
 
-1. [Contributors]()
-2. [Project Goals]()
-3. [Project Overview](h)
-4. [How to use the app]()
-5. [Technologies Used]()
-6. [Future Additions]()
+1. [Contributors](https://github.com/k-atwhite/rancid-tomatillos#contributors)
+2. [Learning Goals](https://github.com/k-atwhite/rancid-tomatillos#learning-goals)
+3. [Project Overview](https://github.com/k-atwhite/rancid-tomatillos#project-overview--user-stories)
+4. [How to use the app](https://github.com/k-atwhite/rancid-tomatillos#app-setup)
+5. [Technologies Used](https://github.com/k-atwhite/rancid-tomatillos#technologies-used)
+6. [Future Additions](https://github.com/k-atwhite/rancid-tomatillos#future-additions--reflections)
 
 ## Contributors
 
