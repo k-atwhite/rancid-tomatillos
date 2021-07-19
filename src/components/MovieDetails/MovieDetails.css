@@ -1,10 +1,11 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 .movie-details-card {
-  color: #A9A8A3;
-  padding: 40px 0;
+  color: #a9a8a3;
 }
 
 h4 {
@@ -16,25 +17,23 @@ h4 {
 }
 
 .container {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0 auto;
   margin-top: 15%;
   width: 80%;
-  background: #F0F0ED;
-  border-radius: 5px;
+  background: #f0f0ed;
   position: relative;
 }
 
 .hero {
-  height: 342px;  
-  margin:0;
+  height: 10%;
+  margin: 0;
   position: relative;
   overflow: hidden;
-  z-index:1;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  z-index: 1;
   object-fit: cover;
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .cover {
@@ -42,41 +41,44 @@ h4 {
   top: 160px;
   left: 40px;
   z-index: 2;
-  max-width: 40%;
-  max-height: 40%;
+  width: 24%;
+  height: 36%;
 }
 
 .details {
   padding-left: 37%;
   padding-top: 20%;
 }
-  
-  
+
 .title1 {
   color: white;
-  font-size: 44px;
+  font-size: 200%;
   margin-bottom: 13px;
   position: relative;
 }
 
-.title2 {    
+.title2 {
   color: white;
-  font-size: 23px;    
+  font-size: 23px;
   font-weight: 300;
   margin-bottom: 15px;
 }
 
-.description { 
+.description {
   height: 100vh;
   font-size: 16px;
   line-height: 27px;
   color: black;
+}
 
+p {
+  max-width: 90%;
+  font: 80%;
 }
 
 .column1 {
-  padding-left: 50px; 
-  padding-top: 120px; 
+  padding-left: 50px;
+  padding-top: 120px;
   width: 220px;
   float: left;
   text-align: center;
@@ -85,7 +87,7 @@ h4 {
 }
 
 .tag {
-  background: #A9A8A3;
+  background: #a9a8a3;
   border-radius: 10px;
   padding: 3px 8px;
   font-size: 14px;
@@ -101,5 +103,3 @@ h4 {
   width: 480px;
   float: right;
 }
-
-
