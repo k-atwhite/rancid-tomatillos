@@ -39,20 +39,23 @@ a:hover {
   z-index:1;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  object-fit: cover;
+  background-size: 100%;
 }
 
 /* .hero:before {
   content:'';
-  width:100%; height:100%;
+  width:50%; height:50%;
   position:absolute;
-  overflow: hidden;
+  /* overflow: hidden; 
   top:0; left:0;
-  background:white;
-  /* background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_bg.jpg"); */
-  /* z-index:-1;
+  /* background:white; 
+  /* background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_bg.jpg"); 
+   z-index:-1;
   transform: skewY(-2.2deg);
   transform-origin:0 0;
-  -webkit-backface-visibility: hidden;   */
+  -webkit-backface-visibility: hidden;  
+} */
 
 .cover {
   position: absolute;
