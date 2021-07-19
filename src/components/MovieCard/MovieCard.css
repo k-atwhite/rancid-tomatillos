@@ -1,11 +1,35 @@
-.card {
-  box-sizing: border-box;
-  border: 3px solid black;
-  padding: 10px;
-  cursor: pointer;
+.entire-card {
+  width: 12%;
+  height: 20%;
+  text-align: center;
 }
 
-img {
-  height: 30vh;
-  width: 12vw;
+.movie-card {
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  height: 31vh;
+  width: 11vw;
+  opacity:0.8;
+  margin: 1%;
+  max-width:100%;
+  max-height:100%;
+  }
+
+.movie-card:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 5px;
+}
+
+.title-rating {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }

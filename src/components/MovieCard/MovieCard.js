@@ -2,14 +2,17 @@ import React from 'react';
 import './MovieCard.css'
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ poster, title, id }) => {
+const MovieCard = ({ poster, title, id, averageRating }) => {
     return (
-        <div className='card'>
+        <section className="entire-card">
             <Link to={`/movies/${id}`}>
-                <img src={poster} alt={'movie poster'}></img>
-                <h4>{title}</h4>
+                <img className="movie-card" src={poster} alt={'movie poster'}></img>
             </Link>
-        </div>
+            <div className="title-rating">
+                <p className="title">{title}</p>
+                <p className="avg-rating">{averageRating}⭐</p>
+            </div>
+        </section>
 
     )
 }
