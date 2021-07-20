@@ -11,7 +11,6 @@ class SearchBar extends Component {
   }
 
   handleSearch = (event) => {
-    // event.preventDefault();
     this.setState({ searchValue: event.target.value });
     this.props.filterMovies(this.state.searchValue);
   };
