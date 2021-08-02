@@ -14,7 +14,7 @@
 5. [Technologies Used](https://github.com/k-atwhite/rancid-tomatillos#technologies-used)
 6. [Future Additions](https://github.com/k-atwhite/rancid-tomatillos#future-additions--reflections)
 
-## Contributors
+## Contributorsl
 
 - [Kat White](https://github.com/k-atwhite)
 
