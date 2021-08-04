@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Movies from "../Movies/Movies";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import "./App.css";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 import { getAllMovies } from "../../apiCalls";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -87,6 +87,7 @@ class App extends Component {
               }}
             />
           </Switch>
+          <Redirect to={"/"} />
         </main>
       </div>
     );
