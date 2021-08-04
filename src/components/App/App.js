@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Movies from "../Movies/Movies";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import "./App.css";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import { getAllMovies } from "../../apiCalls";
 import SearchBar from "../SearchBar/SearchBar";
 
@@ -72,20 +72,21 @@ class App extends Component {
           {this.state.searchError && (
             <h2 className="error-message"> ${this.state.searchError}`</h2>
           )}
-
-          <Route
-            exact
-            path="/"
-            render={() => {
-              return <Movies movies={this.chooseMovieData()} />;
-            }}
-          />
-          <Route
-            path="/movies/:movieId"
-            render={({ match }) => {
-              return <MovieDetails id={parseInt(match.params.movieId)} />;
-            }}
-          />
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return <Movies movies={this.chooseMovieData()} />;
+              }}
+            />
+            <Route
+              path="/movies/:movieId"
+              render={({ match }) => {
+                return <MovieDetails id={parseInt(match.params.movieId)} />;
+              }}
+            />
+          </Switch>
         </main>
       </div>
     );
