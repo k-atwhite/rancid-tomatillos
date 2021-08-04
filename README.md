@@ -25,6 +25,9 @@
 
 ## Project Overview & User Stories
 
+[View Rancid Tomatillos here](https://k-atwhite.github.io/rancid-tomatillos/)
+
+
 Rotten tomatillos offers movie buffs a simple, streamlined way to learn about movies they already love or are curious about. The home page automatically displays the theatrical poster for every movie in our database, as well as the average rating, and the movie's title. Users can scroll through our selection, or simply search for a desired title. Upon finding the film, simply click the movie poster and the user will be taken to a page displaying specifics about that movie. Look above and find that each movie has a specific url path! Click the Rancid Tomatillos logo and head back to the main page to search for another movie.
 
 ## App Setup
